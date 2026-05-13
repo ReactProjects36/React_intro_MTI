@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
 
 export default function ApiCalls() {
-  let [joke, setJoke] = useState("");
-  let [punchline, setPunchline] = useState("");
-  async function getJoke() {
-    const URL = "https://official-joke-api.appspot.com/random_joke";
+  let [fact, setFact] = useState("");
+  useEffect(() => {
+    getFact();
+  }, []);
+  async function getFact() {
+    const URL = "https://catfact.ninja/fact";
     let data = await fetch(URL);
     let result = await data.json();
-    setJoke(result.setup);
-    setPunchline(result.punchline);
+    setFact(result.fact);
   }
   return (
     <div>
-      <h3>Joke : {joke} </h3>
-      <p>Punchline : {punchline}</p>
-      <button onClick={getJoke}>Get Joke </button>
+      <h3>Fact : {fact} </h3>
+      <button onClick={getFact}>Get Fact </button>
     </div>
   );
 }
