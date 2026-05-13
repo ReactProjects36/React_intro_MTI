@@ -3,7 +3,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
-import UseEffectExample from "./components/UseEffectExample";
+// import UseEffectExample from "./components/UseEffectExample";
+import Joker from "./components/APICalls";
 // import EventsIntro from "./components/EventsInro";
 
 // import { SayHello, SayHi } from "./components/ComponentNew";
@@ -11,7 +12,7 @@ import UseEffectExample from "./components/UseEffectExample";
 function App() {
   return (
     <>
-      <UseEffectExample />
+      <Joker />
     </>
   );
 }

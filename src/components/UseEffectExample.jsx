@@ -13,7 +13,7 @@ export default function UseEffectExample() {
 
   useEffect(() => {
     console.log("use Effect Executed");
-  }, [valueX]);
+  }, []);
 
   return (
     <>
