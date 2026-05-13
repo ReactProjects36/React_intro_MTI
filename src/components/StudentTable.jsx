@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./StudentTable.css";
 
 export default function StudentsTable() {
- const [students, setStudents] = useState([]);
+  const [students, setStudents] = useState([]);
 
+  useEffect(() => {
+    getStudents();
+  }, []);
 
-  const URL = "http://127.0.0.1:8000/api/students/"
+  const URL = "http://127.0.0.1:8000/api/students/";
 
   async function getStudents() {
     let data = await fetch(URL);
@@ -13,15 +16,11 @@ export default function StudentsTable() {
     setStudents(result);
   }
 
-  let students = getStudents();
-
   return (
     <div className="table-container">
-
       <h2>Students Data</h2>
 
       <table>
-
         <thead>
           <tr>
             <th>ID</th>
@@ -33,11 +32,8 @@ export default function StudentsTable() {
         </thead>
 
         <tbody>
-
           {students.map((student) => (
-
             <tr key={student.id}>
-
               <td>{student.id}</td>
 
               <td>{student.student_name}</td>
@@ -47,15 +43,10 @@ export default function StudentsTable() {
               <td>{student.course}</td>
 
               <td>{student.enrollment_date}</td>
-
             </tr>
-
           ))}
-
         </tbody>
-
       </table>
-
     </div>
   );
 }
