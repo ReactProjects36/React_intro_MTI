@@ -3,14 +3,15 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
-import EventsIntro from "./components/EventsInro";
+import UseEffectExample from "./components/UseEffectExample";
+// import EventsIntro from "./components/EventsInro";
 
 // import { SayHello, SayHi } from "./components/ComponentNew";
 
 function App() {
   return (
     <>
-      <EventsIntro />
+      <UseEffectExample />
     </>
   );
 }
