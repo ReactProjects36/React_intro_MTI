@@ -3,6 +3,9 @@ import Timer from "./Timer";
 
 export default function Parent() {
   let [showTimer, setShowTimer] = useState(false);
+  useEffect(() => {
+    console.log("Use Effect Executed");
+  }, [showTimer]);
   function manageView() {
     setShowTimer(!showTimer);
   }
